@@ -51,6 +51,7 @@ public class checkOutSteps {
     @Then("they should see all items in their cart including")
     public void theyShouldSeeAllItemsInTheirCartIncluding() {
         assertTrue(check.isValidCheckOut(iteams));
+        check.detailOrder(iteams);
     }
     @Then("see his information")
     public void seeHisInformation() {

@@ -50,10 +50,5 @@ public class CheckOut {
         logger.info(String.format("totalOrder=%.2f", totalOrder));
     }
 
-    static class SimpleFormatter extends Formatter {
-        @Override
-        public String format(LogRecord logRecord) {
-            return logRecord.getMessage() + "\n";
-        }
-    }
+
 }
