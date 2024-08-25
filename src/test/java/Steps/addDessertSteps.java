@@ -1,6 +1,6 @@
 package Steps;
 
-import management_system.classes.iteam;
+import management_system.classes.Item;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,9 +11,9 @@ public class addDessertSteps {
     String dessertName;
     double dessertPrice;
     String dessertDesc;
-    iteam iteam;
+    Item iteam;
     public addDessertSteps() {
-        iteam=new iteam();
+        iteam=new Item();
     }
     @Given("I am logged in as an admin")
     public void iAmLoggedInAsAnAdmin() {

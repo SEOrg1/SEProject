@@ -1,7 +1,7 @@
 package Steps;
 
 import management_system.classes.CheckOut;
-import management_system.classes.iteam;
+import management_system.classes.Item;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 
 import static org.junit.Assert.*;
 
-import static management_system.classes.iteam.iteams;
+import static management_system.classes.Item.iteams;
 
 
 public class checkOutSteps {
@@ -27,10 +27,10 @@ public class checkOutSteps {
 
     @Given("the user has added items to their cart")
     public void theUserHasAddedItemsToTheirCart() {
-        iteam iteam1=new iteam("nutellaCakae",50);
-        iteam iteam2=new iteam("clasicaCakae",30);
-        iteam iteam3=new iteam("pistashioaCakae",40);
-        iteam iteam4=new iteam("beantbuterCakae",70);
+        Item iteam1=new Item("nutellaCakae",50);
+        Item iteam2=new Item("clasicaCakae",30);
+        Item iteam3=new Item("pistashioaCakae",40);
+        Item iteam4=new Item("beantbuterCakae",70);
         iteams.add(iteam1);
         iteams.add(iteam2);
         iteams.add(iteam3);

@@ -10,7 +10,7 @@ public class Order {
     Double totalOfOrder;
     public String msg;
     public CheckOut checkOut=new CheckOut();
-    public ArrayList<iteam> orderIteam=new ArrayList<>();
+    public ArrayList<Item> orderIteam=new ArrayList<>();
     String feedback;
     private static final Logger logger = Logger.getLogger(Order.class.getName());
     static {
@@ -20,7 +20,7 @@ public class Order {
         logger.addHandler(consoleHandler);
     }
     public Order() {}
-    public Order(ArrayList<iteam> iteam, String nameOfWhoOrder , Double totalOfOrder) {
+    public Order(ArrayList<Item> iteam, String nameOfWhoOrder , Double totalOfOrder) {
         this.orderIteam=iteam;
         this.nameOfWhoOrder = nameOfWhoOrder;
         this.totalOfOrder = totalOfOrder;
@@ -42,14 +42,14 @@ public class Order {
     public String getMsg(){
         return msg;
     }
-    public ArrayList<iteam> getOrderIteams(){
+    public ArrayList<Item> getOrderIteams(){
         return orderIteam;
     }
 
-    public boolean addOrder(ArrayList<iteam> iteam,String userName) {
+    public boolean addOrder(ArrayList<Item> iteam, String userName) {
         if (!iteam.isEmpty()&&userName.length()!=0) {
             double totalOrder=0.0;
-            for (iteam iteam1:iteam){
+            for (Item iteam1:iteam){
                 totalOrder+=iteam1.getPrice();
             }
             Order order1=new Order(iteam,userName,totalOrder);

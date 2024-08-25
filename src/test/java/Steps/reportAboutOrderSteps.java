@@ -1,24 +1,24 @@
 package Steps;
-import management_system.classes.iteam;
+import management_system.classes.Item;
 import management_system.classes.Order;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static management_system.classes.iteam.iteams;
+import static management_system.classes.Item.iteams;
 import static management_system.classes.Order.orders;
 import static org.junit.Assert.*;
 public class reportAboutOrderSteps {
-    iteam iteam1;
-    iteam iteam2;
-    iteam iteam3;
+    Item iteam1;
+    Item iteam2;
+    Item iteam3;
     String userName;
     Order order;
 
     public reportAboutOrderSteps() {
-        iteam1 = new iteam("cake1",5.1);
-        iteam2 = new iteam("cake2",5.1);
-        iteam3 = new iteam("cake3",5.1);
+        iteam1 = new Item("cake1",5.1);
+        iteam2 = new Item("cake2",5.1);
+        iteam3 = new Item("cake3",5.1);
         iteams.add(iteam1);
         iteams.add(iteam2);
         iteams.add(iteam3);

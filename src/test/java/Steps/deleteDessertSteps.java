@@ -1,19 +1,19 @@
 package Steps;
 
-import management_system.classes.iteam;
+import management_system.classes.Item;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.*;
-import static management_system.classes.iteam.iteams;
+import static management_system.classes.Item.iteams;
 
 public class deleteDessertSteps {
 
-    iteam iteam;
+    Item iteam;
     String dessertName;
     public deleteDessertSteps() {
-        iteam = new iteam();
-        iteam iteam1 =new iteam("cake",10.99);
+        iteam = new Item();
+        Item iteam1 =new Item("cake",10.99);
         iteams.add(iteam1);
     }
 

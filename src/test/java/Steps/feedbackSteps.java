@@ -1,14 +1,14 @@
 package Steps;
-import management_system.classes.iteam;
+import management_system.classes.Item;
 import management_system.classes.Order;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static management_system.classes.iteam.iteams;
+import static management_system.classes.Item.iteams;
 import static org.junit.Assert.*;
 public class feedbackSteps {
-    iteam iteam1,iteam2,iteam3;
+    Item iteam1,iteam2,iteam3;
 
     Order order;
     String feedback;
@@ -21,9 +21,9 @@ public feedbackSteps() {
     }
     @When("i finsh order")
     public void iFinshOrder() {
-        iteam1=new iteam("cake",10);
-        iteam2=new iteam("cake",10);
-        iteam3=new iteam("cake",10);
+        iteam1=new Item("cake",10);
+        iteam2=new Item("cake",10);
+        iteam3=new Item("cake",10);
         iteams.add(iteam1);
         iteams.add(iteam2);
         iteams.add(iteam3);

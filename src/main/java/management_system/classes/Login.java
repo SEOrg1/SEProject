@@ -3,11 +3,11 @@ package management_system.classes;
 
 import java.util.List;
 
-public class login {
+public class Login {
     public final List<User> users;
     public String msg;
 
-    public login(List<User> users){
+    public Login(List<User> users){
         this.users = users;
 
     }

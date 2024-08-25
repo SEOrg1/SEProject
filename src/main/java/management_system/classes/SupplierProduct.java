@@ -13,8 +13,8 @@ public class SupplierProduct {
     public static final ArrayList<SupplierProduct> supplierProducts =new ArrayList<>();
 
     public SupplierProduct() {}
-    public SupplierProduct(String SupplierName, String name, double price) {
-        this.supplierName = SupplierName;
+    public SupplierProduct(String supplierName, String name, double price) {
+        this.supplierName = supplierName;
         this.name = name;
         this.price = price;
     }

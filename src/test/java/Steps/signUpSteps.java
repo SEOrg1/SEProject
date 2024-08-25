@@ -88,7 +88,7 @@ public class signUpSteps {
     }
     @Then("the system displays an existing contact email error message")
     public void theSystemDisplaysAnExistingContactEmailErrorMessage() {
-        assertEquals(signUp.getMsg(),"Email Already Exists");
+        assertEquals("Email Already Exists",signUp.getMsg());
     }
 
 
@@ -126,7 +126,7 @@ public class signUpSteps {
     @Then("the system displays a weak password error message says")
     public void theSystemDisplaysAWeakPasswordErrorMessageSays() {
         creatAcc=signUp.register(userName,email,password,role);
-        assertEquals(signUp.getMsg(),"your password is too weak");
+        assertEquals("your password is too weak",signUp.getMsg());
     }
 
 

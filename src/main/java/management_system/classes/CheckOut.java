@@ -19,8 +19,8 @@ public class CheckOut {
         logger.addHandler(consoleHandler);
     }
 
-    public void detailOrder(ArrayList<iteam> iteam){
-        for (iteam iteam1 : iteam){
+    public void detailOrder(ArrayList<Item> iteam){
+        for (Item iteam1 : iteam){
             logger.info(i + "-" + iteam1.getName() + " price=" + iteam1.getPrice());
             totalOrder += iteam1.getPrice();
             i++;
@@ -30,7 +30,7 @@ public class CheckOut {
     public void setMsg(String msg){
         this.msg = msg;
     }
-    public boolean isValidCheckOut(ArrayList<iteam> iteam){
+    public boolean isValidCheckOut(ArrayList<Item> iteam){
         if (iteam.isEmpty()){
             setMsg("incomplete check out beacuse you didnt order anythings");
             return false;
@@ -41,13 +41,13 @@ public class CheckOut {
         }
     }
 
-    public void printOrderDetail(ArrayList<iteam> iteam, String username, String email, String address, String phone, double totalOrder){
+    public void printOrderDetail(ArrayList<Item> iteam, String username, String email, String address, String phone, double totalOrder){
         detailOrder(iteam);
-        logger.info("username=" + username);
-        logger.info("email=" + email);
-        logger.info("address=" + address);
-        logger.info("phone=" + phone);
-        logger.info("totalOrder=" + totalOrder);
+        logger.info(String.format("username=%s", username));
+        logger.info(String.format("email=%s", email));
+        logger.info(String.format("address=%s", address));
+        logger.info(String.format("phone=%s", phone));
+        logger.info(String.format("totalOrder=%.2f", totalOrder));
     }
 
     static class SimpleFormatter extends Formatter {

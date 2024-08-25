@@ -1,22 +1,22 @@
 package Steps;
-import management_system.classes.iteam;
+import management_system.classes.Item;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.*;
-import static management_system.classes.iteam.iteams;
+import static management_system.classes.Item.iteams;
 public class updateDessertSteps {
-    iteam iteam3;
+    Item iteam3;
     String dessertName;
-    iteam iteam;
+    Item iteam;
     String dessertDesc;
     Double dessertPrice;
     String newName;
 
     public updateDessertSteps(){
-        iteam3=new iteam("nutellacake",50);
+        iteam3=new Item("nutellacake",50);
         iteams.add(iteam3);
-        iteam=new iteam();
+        iteam=new Item();
 
     }
     @Given("I on update page")

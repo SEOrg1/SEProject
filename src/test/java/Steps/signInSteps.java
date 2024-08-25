@@ -4,7 +4,7 @@ import management_system.classes.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import management_system.classes.login;
+import management_system.classes.Login;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +15,12 @@ public class signInSteps {
     List<User> users;
     public String username;
     public String password;
-    login login;
+    Login login;
     public signInSteps() {
         users = new ArrayList<>();
         User u1=new User("admin","admin@gmail.com","123","user");
         users.add(u1);
-        login = new login(users);
+        login = new Login(users);
         username="";
         password="";
     }

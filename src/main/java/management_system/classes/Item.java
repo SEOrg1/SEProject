@@ -3,19 +3,19 @@ package management_system.classes;
 import java.util.ArrayList;
 
 
-public class iteam {
+public class Item {
 
 
     private String name;
     private double price;
     String description;
     String msg;
-    public static final ArrayList<iteam> iteams = new ArrayList<>();
-    public iteam(String name, double price ) {
+    public static final ArrayList<Item> iteams = new ArrayList<>();
+    public Item(String name, double price ) {
         this.name = name;
         this.price = price;
     }
-    public iteam() {
+    public Item() {
 
     }
 
@@ -29,7 +29,7 @@ public class iteam {
     public String getMsg() {
         return msg;
     }
-    public boolean addItam(iteam iteam) {
+    public boolean addItam(Item iteam) {
         if (iteam.name==null)
             return false;
         else{
@@ -50,13 +50,13 @@ public class iteam {
             return false;
         }else{
             setMsg("Dessert has been added successfully");
-            iteams.add(new iteam(name,price));
+            iteams.add(new Item(name,price));
             return true;
         }
     }
 
     public boolean updateIteam(String oldName,String newName,String description,double price) {
-        for (iteam iteam1 : iteams) {
+        for (Item iteam1 : iteams) {
             if (iteam1.getName().equals(oldName)){
                 iteam1.setName(newName);
                 iteam1.setDescription(  description );
@@ -69,7 +69,7 @@ public class iteam {
         return false;
     }
     public boolean cheakIteam(String name) {
-        for (iteam iteam : iteams) {
+        for (Item iteam : iteams) {
             if (iteam.getName().equals(name)){
                 setMsg("Dessert has been founded");
                 return true;
@@ -79,7 +79,7 @@ public class iteam {
         return false;
     }
     public boolean removeItam(String name) {
-        for (iteam iteam : iteams) {
+        for (Item iteam : iteams) {
             if (iteam.getName().equals(name)) {
                 iteams.remove(iteam);
                 msg="Dessert has been deleted successfully";
