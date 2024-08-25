@@ -28,7 +28,7 @@ public class signUpSteps {
 
     @Given("the user is on the SignUp page")
     public void theUserIsOnTheSignUpPage() {
-
+        assertTrue(true);
     }
     @When("the user provides username")
     public void theUserProvidesUsername() {

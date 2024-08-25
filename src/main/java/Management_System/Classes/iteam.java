@@ -1,8 +1,7 @@
 package Management_System.Classes;
 
-import java.io.Serial;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class iteam {
 
@@ -11,7 +10,7 @@ public class iteam {
     private double price;
     String description;
     String msg;
-    public static ArrayList<iteam> iteams = new ArrayList<>();;
+    public static final ArrayList<iteam> iteams = new ArrayList<>();
     public iteam(String name, double price ) {
         this.name = name;
         this.price = price;
@@ -38,15 +37,19 @@ public class iteam {
             return true;
         }
     }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
     public boolean addIteam(String name,String description,double price) {
         if (name==null){
-            msg="Dessert name is required";
+            setMsg("Dessert name is required");
             return false;
         } else if (price==0.0) {
-            msg="Dessert price is required";
+            setMsg("Dessert price is required");
             return false;
         }else{
-            msg="Dessert has been added successfully";
+            setMsg("Dessert has been added successfully");
             iteams.add(new iteam(name,price));
             return true;
         }
@@ -58,21 +61,21 @@ public class iteam {
                 iteam1.setName(newName);
                 iteam1.setDescription(  description );
                 iteam1.setPrice(price);
-                msg="Dessert has been updated successfully";
+               setMsg("Dessert has been updated successfully");
                 return true;
             }
         }
-        msg="cant update because missing name or non existent dessert";
+        setMsg("cant update because missing name or non existent dessert");
         return false;
     };
     public boolean cheakIteam(String name) {
         for (iteam iteam : iteams) {
             if (iteam.getName().equals(name)){
-                msg="Dessert has been founded";
+                setMsg("Dessert has been founded");
                 return true;
             }
         }
-        msg="cant found dessert because missing name or non existent dessert";
+        setMsg("cant found dessert because missing name or non existent dessert");
         return false;
     }
     public boolean removeItam(String name) {

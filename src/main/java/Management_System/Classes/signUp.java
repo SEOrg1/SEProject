@@ -4,10 +4,7 @@ import java.util.List;
 
 public class signUp {
     public final List <user> users;
-    String username;
-    String password;
-    String email;
-    String role;
+
     String msg;
     public signUp(List <user> users) {
         this.users = users;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class order {
 
-    public static ArrayList<order> orders = new ArrayList<>();
+    public static final ArrayList<order> orders = new ArrayList<>();
     String nameOfWhoOrder;
     Double totalOfOrder;
     public String msg;
@@ -20,15 +20,17 @@ public class order {
         this.nameOfWhoOrder = nameOfWhoOrder;
         this.totalOfOrder = totalOfOrder;
     }
-
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public boolean addOrderFeedback(String feedback) {
         if (feedback!=null) {
             this.feedback = feedback;
-            msg="your feedback added successfully";
+            setMsg("your feedback added successfully");
             return true;
         }
-        msg="your feedback did not added successfully";
+        setMsg("your feedback did not added successfully");
         return false;
     }
 
@@ -64,7 +66,7 @@ public class order {
                 return true;
             }
         }
-        msg="cannot generate report because there is no order";
+        setMsg("cannot generate report because there is no order");
         return false;
     }
 

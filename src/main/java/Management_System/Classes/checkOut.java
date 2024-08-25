@@ -17,13 +17,16 @@ public class checkOut {
         }
         i=1;
     }
+    public void setMsg(String msg){
+        this.msg = msg;
+    }
     public boolean isValidCheckOut(ArrayList<iteam> iteam){
         if (iteam.isEmpty()){
-            msg="incomplete check out beacuse you didnt order anythings";
+            setMsg("incomplete check out beacuse you didnt order anythings");
             return false;
         }else{
             detailOrder(iteam);
-            msg="complete check out";
+            setMsg("complete check out");
             return true;
         }
     }

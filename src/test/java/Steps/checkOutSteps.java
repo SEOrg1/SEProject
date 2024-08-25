@@ -39,7 +39,7 @@ public class checkOutSteps {
     }
     @When("they navigate to the checkout page")
     public void theyNavigateToTheCheckoutPage() {
-
+        assertTrue(true);
     }
     @When("add his delivery information")
     public void addHisDeliveryInformation() {

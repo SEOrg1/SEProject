@@ -1,16 +1,16 @@
 package Management_System.Classes;
 
-import java.io.Serial;
+
 import java.util.ArrayList;
 
 public class user {
 
-    public  String userName;
-    public  String email;
-    public  String password;
+    private  String userName;
+    private   String email;
+    private  String password;
     public String role;
-    public static ArrayList<user> users =new ArrayList<>();
-    public String msg;
+    public static final ArrayList<user> users =new ArrayList<>();
+    private String msg;
 
     public user(String username, String email, String password, String role) {
         this.userName = username;
@@ -25,14 +25,17 @@ public class user {
     public String getMsg() {
         return msg;
     }
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
     public boolean checkUser(String userName){
         for(user user:users){
             if(user.getUserName().equals(userName)){
-                msg="user has been founded successfully";
+                setMsg("user has been founded successfully");
                 return true;
             }
         }
-        msg="cant update because missing name or non existent user";
+        setMsg("cant update because missing name or non existent user");
         return false;
     }
     public boolean updateUser(String oldName,String newName,String newEmail,String newPassword,String newRole){
@@ -42,21 +45,21 @@ public class user {
             updateUser.setEmail(newEmail);
             updateUser.setPassword(newPassword);
             updateUser.setRole(newRole);
-            msg="user information has been updated successfully";
+            setMsg("user information has been updated successfully");
             return true;
         }else {
-            msg="cant update because missing name or non existent user";
+            setMsg("cant update because missing name or non existent user");
             return false;
         }
     }
     public user getUser(String username){
         for(user user : users){
             if(user.getUserName().equals(username)){
-                msg="user has been founded successfully";
+                setMsg("user has been founded successfully");
                 return user;
             }
         }
-        msg="cant update because missing name or non existent user";
+        setMsg("cant update because missing name or non existent user");
         return null;
     }
     public String getRole() {
@@ -66,11 +69,11 @@ public class user {
         for(user user:users){
             if(user.userName.equals(userName)){
                 users.remove(user);
-                msg="old_user has been successfully deleted";
+                setMsg("old_user has been successfully deleted");
                 return true;
             }
         }
-        msg="cant delete because missing name or non-existent user";
+        setMsg("cant delete because missing name or non-existent user");
         return false;
     }
 
