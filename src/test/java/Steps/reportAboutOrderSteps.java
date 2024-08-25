@@ -1,19 +1,19 @@
 package Steps;
-import Management_System.Classes.iteam;
-import Management_System.Classes.order;
+import management_system.classes.iteam;
+import management_system.classes.Order;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static Management_System.Classes.iteam.iteams;
-import static Management_System.Classes.order.orders;
+import static management_system.classes.iteam.iteams;
+import static management_system.classes.Order.orders;
 import static org.junit.Assert.*;
 public class reportAboutOrderSteps {
     iteam iteam1;
     iteam iteam2;
     iteam iteam3;
     String userName;
-    order order;
+    Order order;
 
     public reportAboutOrderSteps() {
         iteam1 = new iteam("cake1",5.1);
@@ -22,7 +22,7 @@ public class reportAboutOrderSteps {
         iteams.add(iteam1);
         iteams.add(iteam2);
         iteams.add(iteam3);
-        order=new order();
+        order=new Order();
     }
     @Given("I am on the Report page")
     public void iAmOnTheReportPage() {

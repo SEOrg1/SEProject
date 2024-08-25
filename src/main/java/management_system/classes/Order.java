@@ -1,26 +1,26 @@
-package Management_System.Classes;
+package management_system.classes;
 
 import java.util.ArrayList;
 import java.util.logging.*;
 
-public class order {
+public class Order {
 
-    public static ArrayList<order> orders = new ArrayList<>();
+    public static ArrayList<Order> orders = new ArrayList<>();
     String nameOfWhoOrder;
     Double totalOfOrder;
     public String msg;
     public checkOut checkOut=new checkOut();
     public ArrayList<iteam> orderIteam=new ArrayList<>();
     String feedback;
-    private static final Logger logger = Logger.getLogger(order.class.getName());
+    private static final Logger logger = Logger.getLogger(Order.class.getName());
     static {
         Handler consoleHandler = new ConsoleHandler();
         consoleHandler.setFormatter(new SimpleFormatter());
         logger.setUseParentHandlers(false);
         logger.addHandler(consoleHandler);
     }
-    public order() {}
-    public order(ArrayList<iteam> iteam,String nameOfWhoOrder ,Double totalOfOrder) {
+    public Order() {}
+    public Order(ArrayList<iteam> iteam, String nameOfWhoOrder , Double totalOfOrder) {
         this.orderIteam=iteam;
         this.nameOfWhoOrder = nameOfWhoOrder;
         this.totalOfOrder = totalOfOrder;
@@ -52,7 +52,7 @@ public class order {
             for (iteam iteam1:iteam){
                 totalOrder+=iteam1.getPrice();
             }
-            order order1=new order(iteam,userName,totalOrder);
+            Order order1=new Order(iteam,userName,totalOrder);
             orders.add(order1);
             return true;
         }
@@ -60,17 +60,17 @@ public class order {
     }
 
 
-    public boolean printReportOrder(ArrayList<order> order) {
+    public boolean printReportOrder(ArrayList<Order> order) {
         if (!orders.isEmpty()) {
             int i=1;
-            for (order order1 : order) {
+            for (Order order1 : order) {
                 logger.info("There is a Report About All Orders");
                 double totalOrderCost = (order1.totalOfOrder / 2);
                 logger.info(String.format("Order number %d: User who ordered: %s, The cost of this order: %.2f, The profit from this order: %.2f",
                         i, order1.nameOfWhoOrder, totalOrderCost, (order1.totalOfOrder - totalOrderCost)));
                 checkOut.detailOrder(order1.getOrderIteams());
-                return true;
             }
+            return true;
         }
         setMsg("cannot generate report because there is no order");
         return false;

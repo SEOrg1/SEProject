@@ -1,7 +1,7 @@
 package Steps;
 
-import Management_System.Classes.checkOut;
-import Management_System.Classes.iteam;
+import management_system.classes.checkOut;
+import management_system.classes.iteam;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 
 import static org.junit.Assert.*;
 
-import static Management_System.Classes.iteam.iteams;
+import static management_system.classes.iteam.iteams;
 
 
 public class checkOutSteps {

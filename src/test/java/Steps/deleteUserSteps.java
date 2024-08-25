@@ -1,12 +1,12 @@
 package Steps;
-import Management_System.Classes.user;
+import management_system.classes.user;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
 
-import static Management_System.Classes.user.users;
+import static management_system.classes.user.users;
 import static org.junit.Assert.*;
 public class deleteUserSteps {
 

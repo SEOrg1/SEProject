@@ -1,10 +1,10 @@
 package Steps;
 
-import Management_System.Classes.user;
+import management_system.classes.user;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import Management_System.Classes.signUp;
+import management_system.classes.signUp;
 
 import java.util.ArrayList;
 import java.util.List;

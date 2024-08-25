@@ -1,19 +1,19 @@
 package Steps;
-import Management_System.Classes.iteam;
-import Management_System.Classes.order;
+import management_system.classes.iteam;
+import management_system.classes.Order;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static Management_System.Classes.iteam.iteams;
+import static management_system.classes.iteam.iteams;
 import static org.junit.Assert.*;
 public class feedbackSteps {
     iteam iteam1,iteam2,iteam3;
 
-    order order;
+    Order order;
     String feedback;
 public feedbackSteps() {
-    order = new order();
+    order = new Order();
 }
     @Given("i am on order page")
     public void iAmOnOrderPage() {

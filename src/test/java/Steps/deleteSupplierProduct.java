@@ -1,9 +1,9 @@
 package Steps;
-import Management_System.Classes.supplierProduct;
+import management_system.classes.supplierProduct;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import static Management_System.Classes.supplierProduct.supplierProducts;
+import static management_system.classes.supplierProduct.supplierProducts;
 import static org.junit.Assert.*;
 public class deleteSupplierProduct {
 

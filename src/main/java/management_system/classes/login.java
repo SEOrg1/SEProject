@@ -1,4 +1,4 @@
-package Management_System.Classes;
+package management_system.classes;
 
 
 import java.util.List;

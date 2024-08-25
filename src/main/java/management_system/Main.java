@@ -1,17 +1,16 @@
-package Management_System;
-import Management_System.Classes.login;
-import Management_System.Classes.signUp;
-import Management_System.Classes.user;
-import Management_System.Classes.*;
-import io.cucumber.java.it.Ma;
+package management_system;
+import management_system.classes.login;
+import management_system.classes.signUp;
+import management_system.classes.user;
+import management_system.classes.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.*;
-import static Management_System.Classes.iteam.iteams;
-import static Management_System.Classes.order.orders;
-import static Management_System.Classes.supplierProduct.supplierProducts;
-import static Management_System.Classes.user.users;
+import static management_system.classes.iteam.iteams;
+import static management_system.classes.Order.orders;
+import static management_system.classes.supplierProduct.supplierProducts;
+import static management_system.classes.user.users;
 
 public class Main {
 
@@ -47,7 +46,7 @@ public class Main {
         iteams.add(iteam3);
         iteams.add(iteam4);
         iteam iteam = new iteam();
-        order orderr = new order();
+        Order orderr = new Order();
         supplierProduct supplierProduct = new supplierProduct();
         supplierProduct s1 = new supplierProduct("noor", "nutella", 50);
         supplierProduct s2 = new supplierProduct("assel", "nuts", 30);
@@ -101,11 +100,8 @@ public class Main {
                                         logger.info(checkOut.getMsg());
                                         logger.info("Enter your feedback:");
                                         String feedback = scanner.nextLine();
-                                        if (orderr.addOrderFeedback(feedback)) {
-                                            logger.info(orderr.getMsg());
-                                        } else {
-                                            logger.info(orderr.getMsg());
-                                        }
+                                        orderr.addOrderFeedback(feedback);
+                                        logger.info(orderr.getMsg());
                                         break;
                                     }
                                 } else {
@@ -147,11 +143,8 @@ public class Main {
                                     logger.info("Enter the username you want to delete: ");
                                     String userWantToDelete = scanner.nextLine();
                                     logger.info(userWantToDelete);
-                                    if (user.deleteUser(userWantToDelete)) {
-                                        logger.info(user.getMsg());
-                                    } else {
-                                        logger.info(user.getMsg());
-                                    }
+                                    user.deleteUser(userWantToDelete);
+                                    logger.info(user.getMsg());
                                     break;
                                 case 4:
                                     logger.info("Welcome to the update dessert page");
@@ -196,11 +189,8 @@ public class Main {
                                         String newPasswordOfUser = scanner.nextLine();
                                         logger.info("Enter new role of user:");
                                         String newRoleOfUser = scanner.nextLine();
-                                        if (user.updateUser(nameOfUserWantToUpdate, newNameOfUser, newEmailOfUser, newPasswordOfUser, newRoleOfUser)) {
-                                            logger.info(user.getMsg());
-                                        } else {
-                                            logger.info(user.getMsg());
-                                        }
+                                        user.updateUser(nameOfUserWantToUpdate, newNameOfUser, newEmailOfUser, newPasswordOfUser, newRoleOfUser);
+                                        logger.info(user.getMsg());
                                     } else {
                                         logger.info(user.getMsg());
                                     }
@@ -210,11 +200,8 @@ public class Main {
                                     scanner.nextLine();
                                     logger.info("Enter the name of the supplier product you want to delete:");
                                     String nameOfSupplierProductWantToDelete = scanner.nextLine();
-                                    if (supplierProduct.deleteSupplierProduct(nameOfSupplierProductWantToDelete)) {
-                                        logger.info(supplierProduct.getMsg());
-                                    } else {
-                                        logger.info(supplierProduct.getMsg());
-                                    }
+                                    supplierProduct.deleteSupplierProduct(nameOfSupplierProductWantToDelete);
+                                    logger.info(supplierProduct.getMsg());
                                     break;
                                 case 7:
                                     logger.info("Welcome to the report page");
@@ -251,11 +238,8 @@ public class Main {
                             String productName = scanner.nextLine();
                             logger.info("Enter the price of the product you want to add:");
                             Double productPrice = scanner.nextDouble();
-                            if (supplierProduct.addSupplierProduct(loger.getUserName(), productName, productPrice)) {
-                                logger.info(supplierProduct.getMsg());
-                            } else {
-                                logger.info(supplierProduct.getMsg());
-                            }
+                            supplierProduct.addSupplierProduct(loger.getUserName(), productName, productPrice);
+                            logger.info(supplierProduct.getMsg());
                         }
                     } else
                         logger.info(login.getMsg());
