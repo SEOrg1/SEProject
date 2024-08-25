@@ -3,6 +3,8 @@ import Management_System.Classes.login;
 import Management_System.Classes.signUp;
 import Management_System.Classes.user;
 import Management_System.Classes.*;
+import io.cucumber.java.it.Ma;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.*;
@@ -13,6 +15,7 @@ import static Management_System.Classes.user.users;
 
 public class Main {
 
+    static Scanner scanner;
     private static final Logger logger = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
@@ -21,8 +24,9 @@ public class Main {
         logger.setUseParentHandlers(false);
         logger.addHandler(consoleHandler);
 
+        String admin="admin";
 
-        user u1 = new user("admin", "admin@gmail.com", "123", "admin");
+        user u1 = new user(admin, "admin@gmail.com", "123", admin);
         user u2 = new user("abdulhamid", "abdulhamid@gmail.com", "123456789", "user");
         user u3 = new user("ali", "ali@gmail.com", "147258369", "store owner");
         user u4 = new user("ahmad", "ahmad@gmail.com", "369258147", "supplier");
@@ -33,7 +37,7 @@ public class Main {
         user user = new user();
         login login = new login(users);
         signUp signUp = new signUp(users);
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         iteam iteam1 = new iteam("nutellaCakae", 50);
         iteam iteam2 = new iteam("clasicaCakae", 30);
         iteam iteam3 = new iteam("pistashioaCakae", 40);
@@ -45,8 +49,8 @@ public class Main {
         iteam iteam = new iteam();
         order orderr = new order();
         supplierProduct supplierProduct = new supplierProduct();
-        supplierProduct s1 = new supplierProduct("ahmad", "nutella", 50);
-        supplierProduct s2 = new supplierProduct("ahmad", "nuts", 30);
+        supplierProduct s1 = new supplierProduct("noor", "nutella", 50);
+        supplierProduct s2 = new supplierProduct("assel", "nuts", 30);
         supplierProducts.add(s1);
         supplierProducts.add(s2);
         String phoneNumber = "";
@@ -59,7 +63,7 @@ public class Main {
         String role;
         String address = "";
         email = "abdulhamid@gmail.com";
-
+        Main app=new Main();
         while (true) {
             logger.info("Welcome to our cake store ");
             logger.info("1-for sign in");
@@ -110,7 +114,7 @@ public class Main {
                                     totalOrder += iteams.get(orderNum - 1).getPrice();
                                 }
                             }
-                        } else if (loger.getRole().equals("admin")) {
+                        } else if (loger.getRole().equals(admin)) {
                             logger.info("Welcome admin");
                             logger.info("What do you want to do");
                             logger.info("1-delete dessert");
@@ -196,13 +200,11 @@ public class Main {
                                             logger.info(user.getMsg());
                                         } else {
                                             logger.info(user.getMsg());
-                                            break;
                                         }
                                     } else {
                                         logger.info(user.getMsg());
-                                        break;
                                     }
-
+                                    break;
                                 case 6:
                                     logger.info("Welcome to the delete supplier product page");
                                     scanner.nextLine();
@@ -240,10 +242,9 @@ public class Main {
                             if (iteam.addIteam(dessertName, dessertDesc, dessertPrice)) {
                                 logger.info(iteam.getMsg());
                                 checkOut.detailOrder(iteams);
-                                return;
-                            } else
+                            } else {
                                 logger.info(iteam.getMsg());
-                            return;
+                            }
                         } else if (loger.getRole().equals("supplier")) {
                             logger.info("Welcome to the supplier page");
                             logger.info("Enter the name of the product you want to add:");
@@ -281,10 +282,16 @@ public class Main {
             }
         }
     }
+
+
+
+
+
+
     static class SimpleFormatter extends Formatter {
         @Override
-        public String format(LogRecord record) {
-            return record.getMessage() + "\n";
+        public String format(LogRecord logRecord) {
+            return logRecord.getMessage() + "\n";
         }
     }
 }

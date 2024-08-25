@@ -45,7 +45,7 @@ public class updateDessertSteps {
     }
     @Then("I should see a confirmation message Dessert has been updated successfully")
     public void iShouldSeeAConfirmationMessageDessertHasBeenUpdatedSuccessfully() {
-         assertEquals(iteam.getMsg(),"Dessert has been updated successfully");
+         assertEquals("Dessert has been updated successfully",iteam.getMsg());
     }
 
 
@@ -59,7 +59,7 @@ public class updateDessertSteps {
     @Then("I should see an error message cant update because missing name or non existent dessert")
     public void iShouldSeeAnErrorMessageCantUpdateBecauseMissingNameOrNonExistentDessert() {
         assertFalse(iteam.cheakIteam(dessertName));
-        assertEquals(iteam.getMsg(),"cant found dessert because missing name or non existent dessert");
+        assertEquals("cant found dessert because missing name or non existent dessert",iteam.getMsg());
     }
 
 

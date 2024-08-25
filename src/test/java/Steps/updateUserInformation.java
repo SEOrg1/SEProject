@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import java.util.ArrayList;
+
 
 import static Management_System.Classes.user.users;
 import static org.junit.Assert.*;
@@ -50,7 +50,7 @@ public class updateUserInformation {
     }
     @Then("I should see a confirmation message user information has been updated successfully")
     public void iShouldSeeAConfirmationMessageUserInformationHasBeenUpdatedSuccessfully() {
-        assertEquals(user.getMsg(),"user information has been updated successfully");
+        assertEquals("user information has been updated successfully",user.getMsg());
     }
 
 
@@ -63,7 +63,7 @@ public class updateUserInformation {
     @Then("I should see an error message cant update because missing name or non existent user")
     public void iShouldSeeAnErrorMessageCantUpdateBecauseMissingNameOrNonExistentUser() {
         assertFalse(user.checkUser(oldUsername));
-        assertEquals(user.getMsg(),"cant update because missing name or non existent user");
+        assertEquals("cant update because missing name or non existent user",user.getMsg());
     }
 
 

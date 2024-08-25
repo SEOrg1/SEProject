@@ -32,7 +32,7 @@ public class deleteDessertSteps {
     @Then("I should see a confirmation message Dessert has been deleted successfully")
     public void iShouldSeeAConfirmationMessageDessertHasBeenDeletedSuccessfully() {
         assertTrue(iteam.removeItam(dessertName));
-        assertEquals(iteam.getMsg(),"Dessert has been deleted successfully");
+        assertEquals("Dessert has been deleted successfully",iteam.getMsg());
     }
 
 
@@ -45,7 +45,7 @@ public class deleteDessertSteps {
     @Then("I should see an error message cant delete because missing name or not exist Dessert Name")
     public void iShouldSeeAnErrorMessageCantDeleteBecauseMissingNameOrNotExistDessertName() {
         assertFalse(iteam.removeItam(dessertName));
-        assertEquals(iteam.getMsg(),"cant delete because missing name or not exist Dessert Name");
+        assertEquals("cant delete because missing name or not exist Dessert Name",iteam.getMsg());
     }
 
 

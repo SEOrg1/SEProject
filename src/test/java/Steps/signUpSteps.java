@@ -66,7 +66,7 @@ public class signUpSteps {
     @Then("the system displays error messages for the missing fields")
     public void theSystemDisplaysErrorMessagesForTheMissingFields() {
         creatAcc=signUp.register(userName,email,password,role);
-        assertEquals(signUp.getMsg(),"Some Missing Fields");
+        assertEquals("Some Missing Fields",signUp.getMsg());
     }
 
 
@@ -88,7 +88,7 @@ public class signUpSteps {
     }
     @Then("the system displays an existing contact email error message")
     public void theSystemDisplaysAnExistingContactEmailErrorMessage() {
-        assertEquals(signUp.getMsg(),"Email Already Exists");
+        assertEquals("Email Already Exists",signUp.getMsg());
     }
 
 

@@ -46,7 +46,7 @@ public class addDessertSteps {
     @Then("I should see a confirmation message Dessert has been added successfully")
     public void iShouldSeeAConfirmationMessageDessertHasBeenAddedSuccessfully() {
         assertTrue(iteam.addIteam(dessertName,dessertDesc,dessertPrice));
-        assertEquals(iteam.getMsg(),"Dessert has been added successfully");
+        assertEquals("Dessert has been added successfully",iteam.getMsg());
 
     }
 

@@ -11,6 +11,7 @@ public class user {
     public String role;
     public static final ArrayList<user> users =new ArrayList<>();
     private String msg;
+    private  String erorMsg="cant update because missing name or non existent user";
 
     public user(String username, String email, String password, String role) {
         this.userName = username;
@@ -35,7 +36,7 @@ public class user {
                 return true;
             }
         }
-        setMsg("cant update because missing name or non existent user");
+        setMsg(erorMsg);
         return false;
     }
     public boolean updateUser(String oldName,String newName,String newEmail,String newPassword,String newRole){
@@ -48,7 +49,7 @@ public class user {
             setMsg("user information has been updated successfully");
             return true;
         }else {
-            setMsg("cant update because missing name or non existent user");
+            setMsg(erorMsg);
             return false;
         }
     }
@@ -59,7 +60,7 @@ public class user {
                 return user;
             }
         }
-        setMsg("cant update because missing name or non existent user");
+        setMsg(erorMsg);
         return null;
     }
     public String getRole() {
@@ -89,8 +90,8 @@ public class user {
     public  void setEmail(String email) {
         this.email = email;
     }
-    public  void setRole(String Role) {
-        this.role = Role;
+    public  void setRole(String role) {
+        this.role = role;
     }
 
     public  String getPassword() {

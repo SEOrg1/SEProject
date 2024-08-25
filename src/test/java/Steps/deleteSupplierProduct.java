@@ -1,14 +1,10 @@
 package Steps;
 import Management_System.Classes.supplierProduct;
-import Management_System.Classes.user;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import static Management_System.Classes.supplierProduct.supplierProducts;
-import static Management_System.Classes.user.users;
 import static org.junit.Assert.*;
-
 public class deleteSupplierProduct {
 
     String productName;
@@ -35,7 +31,7 @@ public class deleteSupplierProduct {
     @Then("I should see a confirmation message product has been deleted successfully")
     public void iShouldSeeAConfirmationMessageProductHasBeenDeletedSuccessfully() {
         assertTrue(product.deleteSupplierProduct(productName));
-        assertEquals(product.getMsg(),"product has been deleted successfully");
+        assertEquals("product has been deleted successfully",product.getMsg());
     }
 
 
@@ -48,7 +44,7 @@ public class deleteSupplierProduct {
     @Then("I should see an error message cant delete because missing name or non exist product Name")
     public void iShouldSeeAnErrorMessageCantDeleteBecauseMissingNameOrNonExistProductName() {
         assertFalse(product.deleteSupplierProduct(productName));
-        assertEquals(product.getMsg(),"cant delete because missing name or non exist product Name");
+        assertEquals("cant delete because missing name or non exist product Name",product.getMsg());
     }
 
 

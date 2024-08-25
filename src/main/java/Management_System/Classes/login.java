@@ -24,7 +24,7 @@ public class login {
       }
       setMsg("Login Failed");
       return false;
-    };
+    }
 
     public String getMsg() {
         return msg;

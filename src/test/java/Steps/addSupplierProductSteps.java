@@ -49,7 +49,7 @@ public class addSupplierProductSteps {
     @Then("I should see a confirmation message product has been added successfully")
     public void iShouldSeeAConfirmationMessageProductHasBeenAddedSuccessfully() {
         assertTrue(s.addSupplierProduct(supplierName,productName,price));
-        assertEquals(s.getMsg(),"product has been added successfully");
+        assertEquals("product has been added successfully",s.getMsg());
     }
 
 
@@ -65,7 +65,7 @@ public class addSupplierProductSteps {
     @Then("I should see an error message can't add because missing some fields or non exist supplier")
     public void iShouldSeeAnErrorMessageCanTAddBecauseMissingSomeFieldsOrNonExistSupplier() {
         assertFalse(s.addSupplierProduct(supplierName,productName,price));
-        assertEquals(s.getMsg(),"can't add because missing some fields or non exist supplier");
+        assertEquals("can't add because missing some fields or non exist supplier",s.getMsg());
     }
 
 

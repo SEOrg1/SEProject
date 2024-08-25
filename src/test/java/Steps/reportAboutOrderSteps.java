@@ -53,7 +53,7 @@ public class reportAboutOrderSteps {
     @Then("I should see error message cannot generate report because there is no order")
     public void iShouldSeeErrorMessageCannotGenerateReportBecauseThereIsNoOrder() {
         assertFalse(order.printReportOrder(orders));
-        assertEquals(order.getMsg(),"cannot generate report because there is no order");
+        assertEquals("cannot generate report because there is no order",order.getMsg());
     }
 
 

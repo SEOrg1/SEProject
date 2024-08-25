@@ -6,7 +6,7 @@ public class supplierProduct {
 
     String name;
     double price;
-    String SupplierName;
+    String supplierName;
     String msg;
     user user=new user();
 
@@ -14,7 +14,7 @@ public class supplierProduct {
 
     public supplierProduct() {}
     public supplierProduct(String SupplierName,String name, double price) {
-        this.SupplierName = SupplierName;
+        this.supplierName = SupplierName;
         this.name = name;
         this.price = price;
     }

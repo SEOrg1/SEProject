@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -59,7 +58,7 @@ public class checkOutSteps {
     }
     @Then("see confirm message")
     public void seeConfirmMessage() {
-        assertEquals(check.getMsg(),"complete check out");
+        assertEquals("complete check out",check.getMsg());
     }
 
 
@@ -73,7 +72,7 @@ public class checkOutSteps {
 
     @Then("they should see error message")
     public void theyShouldSeeErrorMessage() {
-        assertEquals(check.getMsg(),"incomplete check out beacuse you didnt order anythings");
+        assertEquals("incomplete check out beacuse you didnt order anythings",check.getMsg());
     }
 
 

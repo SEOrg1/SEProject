@@ -6,7 +6,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import static Management_System.Classes.iteam.iteams;
-import static Management_System.Classes.order.orders;
 import static org.junit.Assert.*;
 public class feedbackSteps {
     iteam iteam1,iteam2,iteam3;
@@ -36,7 +35,7 @@ public feedbackSteps() {
     @Then("i should see confirm message your feedback added successfully")
     public void iShouldSeeConfirmMessageYourFeedbackAddedSuccessfully() {
         assertTrue(order.addOrderFeedback(feedback));
-        assertEquals(order.getMsg(),"your feedback added successfully");
+        assertEquals("your feedback added successfully",order.getMsg());
     }
 
     @Then("i miss to add my feedback")
@@ -46,7 +45,7 @@ public feedbackSteps() {
     @Then("i should see error message your feedback did not added successfully")
     public void iShouldSeeErrorMessageYourFeedbackDidNotAddedSuccessfully() {
         assertFalse(order.addOrderFeedback(feedback));
-        assertEquals(order.getMsg(),"your feedback did not added successfully");
+        assertEquals("your feedback did not added successfully",order.getMsg());
     }
 
 

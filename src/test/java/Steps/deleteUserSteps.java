@@ -1,11 +1,10 @@
 package Steps;
-import Management_System.Classes.iteam;
 import Management_System.Classes.user;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import java.util.ArrayList;
+
 
 import static Management_System.Classes.user.users;
 import static org.junit.Assert.*;
@@ -34,7 +33,7 @@ public class deleteUserSteps {
     @Then("I should see a confirmation message User old_user has been successfully deleted")
     public void iShouldSeeAConfirmationMessageUserOldUserHasBeenSuccessfullyDeleted() {
         assertTrue(user.deleteUser(username));
-        assertEquals(user.getMsg(),"old_user has been successfully deleted");
+        assertEquals("old_user has been successfully deleted",user.getMsg());
     }
 
 
@@ -49,7 +48,7 @@ public class deleteUserSteps {
     @Then("I should see an error message cant delete because missing name or non-existent user")
     public void iShouldSeeAnErrorMessageCantDeleteBecauseMissingNameOrNonExistentUser() {
        assertFalse(user.deleteUser(username));
-       assertEquals(user.getMsg(),"cant delete because missing name or non-existent user");
+       assertEquals("cant delete because missing name or non-existent user",user.getMsg());
 
     }
 

@@ -36,7 +36,7 @@ public class signInSteps {
     }
     @Then("the user should be logged in successfully")
     public void theUserShouldBeLoggedInSuccessfully() {
-        assertEquals(login.getMsg(),"Login Successful");
+        assertEquals("Login Successful",login.getMsg());
     }
 
 
@@ -53,7 +53,7 @@ public class signInSteps {
     }
     @Then("the user should see an error message Login Failed")
     public void theUserShouldSeeAnErrorMessageLoginFailed() {
-        assertEquals(login.getMsg(),"Login Failed");
+        assertEquals("Login Failed",login.getMsg());
     }
 
 
