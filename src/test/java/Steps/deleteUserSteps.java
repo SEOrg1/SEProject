@@ -1,22 +1,22 @@
 package Steps;
-import management_system.classes.user;
+import management_system.classes.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
 
-import static management_system.classes.user.users;
+import static management_system.classes.User.users;
 import static org.junit.Assert.*;
 public class deleteUserSteps {
 
     String username;
-    user user;
-    user user1;
+    User user;
+    User user1;
     public deleteUserSteps() {
-         user1=new user("ali","ali@gmail.com","123456","user");
+         user1=new User("ali","ali@gmail.com","123456","user");
         users.add(user1);
-        user =new user();
+        user =new User();
     }
     @Given("I am logged in as an administrator")
     public void iAmLoggedInAsAnAdministrator() {

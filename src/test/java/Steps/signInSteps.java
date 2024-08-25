@@ -1,6 +1,6 @@
 package Steps;
 
-import management_system.classes.user;
+import management_system.classes.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,13 +12,13 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class signInSteps {
-    List<user> users;
+    List<User> users;
     public String username;
     public String password;
     login login;
     public signInSteps() {
         users = new ArrayList<>();
-        user u1=new user("admin","admin@gmail.com","123","user");
+        User u1=new User("admin","admin@gmail.com","123","user");
         users.add(u1);
         login = new login(users);
         username="";

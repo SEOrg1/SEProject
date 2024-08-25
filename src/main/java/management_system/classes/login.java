@@ -4,10 +4,10 @@ package management_system.classes;
 import java.util.List;
 
 public class login {
-    public final List<user> users;
+    public final List<User> users;
     public String msg;
 
-    public login(List<user> users){
+    public login(List<User> users){
         this.users = users;
 
     }
@@ -16,7 +16,7 @@ public class login {
           setMsg("Login Failed");
           return true;
       }
-      for (user user : users){
+      for (User user : users){
           if (user.getUserName().equals(userName) && user.getPassword().equals(password)){
               setMsg("Login Successful");
               return true;

@@ -1,18 +1,18 @@
 package Steps;
-import management_system.classes.supplierProduct;
+import management_system.classes.SupplierProduct;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import static management_system.classes.supplierProduct.supplierProducts;
+import static management_system.classes.SupplierProduct.supplierProducts;
 import static org.junit.Assert.*;
 public class deleteSupplierProduct {
 
     String productName;
-    supplierProduct product;
-    supplierProduct product1;
+    SupplierProduct product;
+    SupplierProduct product1;
     public deleteSupplierProduct() {
-        product = new supplierProduct();
-        product1 = new supplierProduct("ahmad","nuts",15.1);
+        product = new SupplierProduct();
+        product1 = new SupplierProduct("ahmad","nuts",15.1);
         supplierProducts.add(product1);
     }
 

@@ -2,18 +2,18 @@ package management_system.classes;
 
 import java.util.ArrayList;
 
-public class supplierProduct {
+public class SupplierProduct {
 
     String name;
     double price;
     String supplierName;
     String msg;
-    user user=new user();
+    User user=new User();
 
-    public static ArrayList<supplierProduct> supplierProducts =new ArrayList<>();
+    public static final ArrayList<SupplierProduct> supplierProducts =new ArrayList<>();
 
-    public supplierProduct() {}
-    public supplierProduct(String SupplierName,String name, double price) {
+    public SupplierProduct() {}
+    public SupplierProduct(String SupplierName, String name, double price) {
         this.supplierName = SupplierName;
         this.name = name;
         this.price = price;
@@ -30,7 +30,7 @@ public class supplierProduct {
     }
 
     public boolean deleteSupplierProduct(String productName) {
-            for (supplierProduct product : supplierProducts) {
+            for (SupplierProduct product : supplierProducts) {
                 if (product.getProductName().equals(productName)) {
                     supplierProducts.remove(product);
                     setMsg("product has been deleted successfully");
@@ -43,7 +43,7 @@ public class supplierProduct {
 
     public boolean addSupplierProduct(String supplierName,String productName, double price) {
         if (user.checkUser(supplierName)&& supplierName!=null&&productName!=null&&price!=0.0){
-            supplierProduct s1= new supplierProduct(supplierName,productName,price);
+            SupplierProduct s1= new SupplierProduct(supplierName,productName,price);
             supplierProducts.add(s1);
             setMsg("product has been added successfully");
             return true;

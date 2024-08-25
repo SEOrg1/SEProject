@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.logging.*;
 
 
-public class checkOut {
+public class CheckOut {
     int i=1;
     public String msg;
     double totalOrder;
     public String getMsg(){
         return msg;
     }
-    private static final Logger logger = Logger.getLogger(Order.class.getName());
+    private static final Logger logger = Logger.getLogger(CheckOut.class.getName());
     static {
         Handler consoleHandler = new ConsoleHandler();
         consoleHandler.setFormatter(new Order.SimpleFormatter());

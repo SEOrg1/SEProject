@@ -1,12 +1,12 @@
 package Steps;
 
-import management_system.classes.supplierProduct;
-import management_system.classes.user;
+import management_system.classes.SupplierProduct;
+import management_system.classes.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static management_system.classes.user.users;
+import static management_system.classes.User.users;
 import static org.junit.Assert.*;
 
 public class addSupplierProductSteps {
@@ -14,11 +14,11 @@ public class addSupplierProductSteps {
     String productName;
     String supplierName;
     Double price;
-    user u1;
-    supplierProduct s;
+    User u1;
+    SupplierProduct s;
     public addSupplierProductSteps() {
-        s=new supplierProduct();
-        u1=new user("ali","ali@gmail.com","123","supplier");
+        s=new SupplierProduct();
+        u1=new User("ali","ali@gmail.com","123","supplier");
         users.add(u1);
     }
 

@@ -1,6 +1,6 @@
 package Steps;
 
-import management_system.classes.checkOut;
+import management_system.classes.CheckOut;
 import management_system.classes.iteam;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,14 +15,14 @@ import static management_system.classes.iteam.iteams;
 public class checkOutSteps {
 
 
-    checkOut check;
+    CheckOut check;
     String addres;
     String phone;
     String username;
     String email;
     Double totalOrder;
     public checkOutSteps() {
-        check = new checkOut();
+        check = new CheckOut();
     }
 
     @Given("the user has added items to their cart")

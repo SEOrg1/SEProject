@@ -1,7 +1,7 @@
 package management_system;
 import management_system.classes.login;
-import management_system.classes.signUp;
-import management_system.classes.user;
+import management_system.classes.SignUp;
+import management_system.classes.User;
 import management_system.classes.*;
 
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import java.util.Scanner;
 import java.util.logging.*;
 import static management_system.classes.iteam.iteams;
 import static management_system.classes.Order.orders;
-import static management_system.classes.supplierProduct.supplierProducts;
-import static management_system.classes.user.users;
+import static management_system.classes.SupplierProduct.supplierProducts;
+import static management_system.classes.User.users;
 
 public class Main {
 
@@ -25,17 +25,17 @@ public class Main {
 
         String admin="admin";
 
-        user u1 = new user(admin, "admin@gmail.com", "123", admin);
-        user u2 = new user("abdulhamid", "abdulhamid@gmail.com", "123456789", "user");
-        user u3 = new user("ali", "ali@gmail.com", "147258369", "store owner");
-        user u4 = new user("ahmad", "ahmad@gmail.com", "369258147", "supplier");
+        User u1 = new User(admin, "admin@gmail.com", "123", admin);
+        User u2 = new User("abdulhamid", "abdulhamid@gmail.com", "123456789", "user");
+        User u3 = new User("ali", "ali@gmail.com", "147258369", "store owner");
+        User u4 = new User("ahmad", "ahmad@gmail.com", "369258147", "supplier");
         users.add(u1);
         users.add(u2);
         users.add(u3);
         users.add(u4);
-        user user = new user();
+        User user = new User();
         login login = new login(users);
-        signUp signUp = new signUp(users);
+        SignUp signUp = new SignUp(users);
         scanner = new Scanner(System.in);
         iteam iteam1 = new iteam("nutellaCakae", 50);
         iteam iteam2 = new iteam("clasicaCakae", 30);
@@ -47,13 +47,13 @@ public class Main {
         iteams.add(iteam4);
         iteam iteam = new iteam();
         Order orderr = new Order();
-        supplierProduct supplierProduct = new supplierProduct();
-        supplierProduct s1 = new supplierProduct("noor", "nutella", 50);
-        supplierProduct s2 = new supplierProduct("assel", "nuts", 30);
+        SupplierProduct supplierProduct = new SupplierProduct();
+        SupplierProduct s1 = new SupplierProduct("noor", "nutella", 50);
+        SupplierProduct s2 = new SupplierProduct("assel", "nuts", 30);
         supplierProducts.add(s1);
         supplierProducts.add(s2);
         String phoneNumber = "";
-        checkOut checkOut = new checkOut();
+        CheckOut checkOut = new CheckOut();
         double totalOrder = 0.0;
         ArrayList<iteam> orderItems = new ArrayList<>();
         String email;
@@ -78,7 +78,7 @@ public class Main {
                     logger.info("Enter password:");
                     password = scanner.nextLine();
                     if (login.checkForLogIn(username, password)) {
-                        user loger = user.getUser(username);
+                        User loger = user.getUser(username);
                         if (loger.getRole().equals("user")) {
                             logger.info(login.getMsg());
                             logger.info("");

@@ -3,23 +3,23 @@ package management_system.classes;
 
 import java.util.ArrayList;
 
-public class user {
+public class User {
 
     private  String userName;
     private   String email;
     private  String password;
     public String role;
-    public static final ArrayList<user> users =new ArrayList<>();
+    public static final ArrayList<User> users =new ArrayList<>();
     private String msg;
     private  String erorMsg="cant update because missing name or non existent user";
 
-    public user(String username, String email, String password, String role) {
+    public User(String username, String email, String password, String role) {
         this.userName = username;
         this.email = email;
         this.password = password;
         this.role = role;
     }
-    public user() { }
+    public User() { }
     public  String getUserName() {
         return userName;
     }
@@ -30,7 +30,7 @@ public class user {
         this.msg = msg;
     }
     public boolean checkUser(String userName){
-        for(user user:users){
+        for(User user:users){
             if(user.getUserName().equals(userName)){
                 setMsg("user has been founded successfully");
                 return true;
@@ -40,7 +40,7 @@ public class user {
         return false;
     }
     public boolean updateUser(String oldName,String newName,String newEmail,String newPassword,String newRole){
-        user updateUser=getUser(oldName);
+        User updateUser=getUser(oldName);
         if(updateUser!=null){
             updateUser.setUserName(newName);
             updateUser.setEmail(newEmail);
@@ -53,8 +53,8 @@ public class user {
             return false;
         }
     }
-    public user getUser(String username){
-        for(user user : users){
+    public User getUser(String username){
+        for(User user : users){
             if(user.getUserName().equals(username)){
                 setMsg("user has been founded successfully");
                 return user;
@@ -67,7 +67,7 @@ public class user {
         return role;
     }
     public boolean deleteUser(String userName){
-        for(user user:users){
+        for(User user:users){
             if(user.userName.equals(userName)){
                 users.remove(user);
                 setMsg("old_user has been successfully deleted");

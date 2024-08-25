@@ -9,7 +9,7 @@ public class Order {
     String nameOfWhoOrder;
     Double totalOfOrder;
     public String msg;
-    public checkOut checkOut=new checkOut();
+    public CheckOut checkOut=new CheckOut();
     public ArrayList<iteam> orderIteam=new ArrayList<>();
     String feedback;
     private static final Logger logger = Logger.getLogger(Order.class.getName());

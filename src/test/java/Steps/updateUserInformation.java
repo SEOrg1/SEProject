@@ -1,27 +1,27 @@
 package Steps;
-import management_system.classes.user;
+import management_system.classes.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
 
-import static management_system.classes.user.users;
+import static management_system.classes.User.users;
 import static org.junit.Assert.*;
 public class updateUserInformation {
 
-    user u1=new user();
+    User u1=new User();
     String oldUsername;
-    user user;
-    user user2;
+    User user;
+    User user2;
     String newUsername;
     String newPassword;
     String newEmailAddress;
     String newRole;
     public updateUserInformation() {
-        u1=new user("noor","noor@gmail.com","12345","user");
+        u1=new User("noor","noor@gmail.com","12345","user");
         users.add(u1);
-        user=new user();
+        user=new User();
     }
 
     @Given("I on update user page")

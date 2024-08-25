@@ -1,18 +1,18 @@
 package Steps;
 
-import management_system.classes.user;
+import management_system.classes.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import management_system.classes.signUp;
+import management_system.classes.SignUp;
 
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.*;
 
 public class signUpSteps {
-    signUp signUp;
-    List<user> users;
+    SignUp signUp;
+    List<User> users;
     String userName;
     String password;
     String email;
@@ -20,8 +20,8 @@ public class signUpSteps {
     boolean creatAcc;
 
     public signUpSteps() {
-        users = new ArrayList<user>();
-        signUp=new signUp(users);
+        users = new ArrayList<User>();
+        signUp=new SignUp(users);
     }
 
 
@@ -79,7 +79,7 @@ public class signUpSteps {
         email="abdulhamid@gmail.com";
         password="123456789";
         role="user";
-        user u1=new user(userName,email,password,role);
+        User u1=new User(userName,email,password,role);
         users.add(u1);
     }
     @When("the user provides a contact email that is already registered")
@@ -88,7 +88,7 @@ public class signUpSteps {
     }
     @Then("the system displays an existing contact email error message")
     public void theSystemDisplaysAnExistingContactEmailErrorMessage() {
-        assertEquals("Email Already Exists",signUp.getMsg());
+        assertEquals(signUp.getMsg(),"Email Already Exists");
     }
 
 

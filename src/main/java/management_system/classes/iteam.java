@@ -67,7 +67,7 @@ public class iteam {
         }
         setMsg("cant update because missing name or non existent dessert");
         return false;
-    };
+    }
     public boolean cheakIteam(String name) {
         for (iteam iteam : iteams) {
             if (iteam.getName().equals(name)){

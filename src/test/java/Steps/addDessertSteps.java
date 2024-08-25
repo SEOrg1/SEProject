@@ -57,7 +57,7 @@ public class addDessertSteps {
     public void iShouldSeeAnErrorMessageDessertNameIsRequired() {
         dessertName=null;
         assertFalse(iteam.addIteam(dessertName,dessertDesc,dessertPrice));
-        assertEquals(iteam.getMsg(),"Dessert name is required");
+        assertEquals("Dessert name is required",iteam.getMsg());
     }
 
 
@@ -70,7 +70,7 @@ public class addDessertSteps {
     public void iShouldSeeAnErrorMessageDessertPriceIsRequired() {
         dessertPrice=0.0;
         assertFalse(iteam.addIteam(dessertName,dessertDesc,dessertPrice));
-        assertEquals(iteam.getMsg(),"Dessert price is required");
+        assertEquals("Dessert price is required",iteam.getMsg());
 
     }
 

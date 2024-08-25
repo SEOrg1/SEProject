@@ -2,15 +2,15 @@ package management_system.classes;
 
 import java.util.List;
 
-public class signUp {
-    public final List <user> users;
+public class SignUp {
+    public final List <User> users;
 
     String msg;
-    public signUp(List <user> users) {
+    public SignUp(List <User> users) {
         this.users = users;
     }
     public boolean existingEmail(String email) {
-        for (user user : users) {
+        for (User user : users) {
             if (user.getEmail().equals(email)) {
                 return true;
             }
@@ -38,7 +38,7 @@ public class signUp {
             setMsg("Email Already Exists");
             return false;
         }
-        user u1=new user(username,password,email,role);
+        User u1=new User(username,password,email,role);
         users.add(u1);
         setMsg("Registration Successful");
         return true;
