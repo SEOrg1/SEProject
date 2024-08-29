@@ -43,7 +43,7 @@ public class Order {
         return msg;
     }
     public ArrayList<Item> getOrderIteams(){
-        return orderIteam;
+        return this.orderIteam;
     }
 
     public boolean addOrder(ArrayList<Item> iteam, String userName) {
@@ -63,12 +63,14 @@ public class Order {
     public boolean printReportOrder(ArrayList<Order> order) {
         if (!orders.isEmpty()) {
             int i=1;
+            logger.info("There is a Report About All Orders");
             for (Order order1 : order) {
-                logger.info("There is a Report About All Orders");
                 double totalOrderCost = (order1.totalOfOrder / 2);
                 logger.info(String.format("Order number %d: User who ordered: %s, The cost of this order: %.2f, The profit from this order: %.2f",
                         i, order1.nameOfWhoOrder, totalOrderCost, (order1.totalOfOrder - totalOrderCost)));
                 checkOut.detailOrder(order1.getOrderIteams());
+                logger.info("");
+                i++;
             }
             return true;
         }

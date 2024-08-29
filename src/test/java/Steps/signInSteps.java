@@ -9,15 +9,16 @@ import management_system.classes.Login;
 import java.util.ArrayList;
 import java.util.List;
 
+import static management_system.classes.User.users;
 import static org.junit.Assert.*;
 
 public class signInSteps {
-    List<User> users;
+
     public String username;
     public String password;
     Login login;
     public signInSteps() {
-        users = new ArrayList<>();
+
         User u1=new User("admin","admin@gmail.com","123","user");
         users.add(u1);
         login = new Login(users);

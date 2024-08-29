@@ -26,9 +26,9 @@ public class Main {
         String admin="admin";
 
         User u1 = new User(admin, "admin@gmail.com", "123", admin);
-        User u2 = new User("abdulhamid", "abdulhamid@gmail.com", "123456789", "user");
-        User u3 = new User("ali", "ali@gmail.com", "147258369", "store owner");
-        User u4 = new User("ahmad", "ahmad@gmail.com", "369258147", "supplier");
+        User u2 = new User("abd", "abd@gmail.com", "user123", "user");
+        User u3 = new User("ali", "ali@gmail.com", "123456789", "store owner");
+        User u4 = new User("ahmad", "ahmad@gmail.com", "sup123", "supplier");
         users.add(u1);
         users.add(u2);
         users.add(u3);
@@ -37,10 +37,10 @@ public class Main {
         Login login = new Login(users);
         SignUp signUp = new SignUp(users);
         scanner = new Scanner(System.in);
-        Item iteam1 = new Item("nutellaCakae", 50);
-        Item iteam2 = new Item("clasicaCakae", 30);
-        Item iteam3 = new Item("pistashioaCakae", 40);
-        Item iteam4 = new Item("beantbuterCakae", 70);
+        Item iteam1 = new Item("nutella cake", 50);
+        Item iteam2 = new Item("clasic Cakae", 30);
+        Item iteam3 = new Item("pistachio cake", 40);
+        Item iteam4 = new Item("peanut butter cake", 70);
         iteams.add(iteam1);
         iteams.add(iteam2);
         iteams.add(iteam3);
@@ -61,6 +61,7 @@ public class Main {
         String password;
         String role;
         String address = "";
+        int i=1;
         email = "abdulhamid@gmail.com";
         while (true) {
             logger.info("Welcome to our cake store ");
@@ -94,8 +95,8 @@ public class Main {
                                         logger.info("Your phone number: ");
                                         phoneNumber = scanner.nextLine();
                                         logger.info("This is your order:");
-                                        checkOut.printOrderDetail(orderItems, username, address, email, phoneNumber, totalOrder);
-                                        orderr.addOrder(orderItems, username);
+                                        orderr.addOrder(orderItems,loger.getUserName());
+                                        checkOut.printOrderDetail(orderItems,loger.getUserName(), address, email, phoneNumber, totalOrder);
                                         logger.info(checkOut.getMsg());
                                         logger.info("Enter your feedback:");
                                         String feedback = scanner.nextLine();
@@ -118,7 +119,7 @@ public class Main {
                             logger.info("4-update dessert");
                             logger.info("5-update user");
                             logger.info("6-delete supplier product");
-                            logger.info("7-report about order");
+                            logger.info("7-print supplier product");
                             int choice2 = scanner.nextInt();
                             switch (choice2) {
                                 case 1:
@@ -134,7 +135,8 @@ public class Main {
                                     break;
                                 case 2:
                                     logger.info("Orders");
-                                    checkOut.printOrderDetail(orderItems, username, address, email, phoneNumber, totalOrder);
+                                    //checkOut.printOrderDetail(orderItems, username, address, email, phoneNumber, totalOrder);
+                                    orderr.printReportOrder(orders);
                                     break;
                                 case 3:
                                     logger.info("Welcome to the delete user page");
@@ -203,11 +205,11 @@ public class Main {
                                     logger.info(supplierProduct.getMsg());
                                     break;
                                 case 7:
-                                    logger.info("Welcome to the report page");
-                                    if (orderr.printReportOrder(orders)) {
-                                        break;
-                                    } else {
-                                        logger.info(orderr.getMsg());
+                                    logger.info("Welcome to the print supplier product page");
+                                    for (SupplierProduct supplierProduct1:supplierProducts ){
+                                        logger.info(i + "-" + supplierProduct1.getProductName() + " price=" + supplierProduct1.getPrice());
+                                        totalOrder += iteam1.getPrice();
+                                        i++;
                                     }
                                     break;
                                 default:

@@ -18,6 +18,9 @@ public class SupplierProduct {
         this.name = name;
         this.price = price;
     }
+    public double getPrice(){
+        return price;
+    }
 
     public String getMsg() {
         return msg;

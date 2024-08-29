@@ -3,12 +3,14 @@ package management_system.classes;
 
 import java.util.List;
 
+import static management_system.classes.User.users;
+
 public class Login {
-    public final List<User> users;
+    public final List<User> usersr;
     public String msg;
 
     public Login(List<User> users){
-        this.users = users;
+        this.usersr = users;
 
     }
     public boolean checkForLogIn(String userName,String password){
